@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      jouer contre l'ordi
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div>
+    <ion-text text-center color="success">
+      <h2 *ngIf="res=='gagne'" >gagné !</h2>
+    </ion-text>
+    <ion-text text-center color="danger">
+      <h2 *ngIf="res=='perdu'" color="danger">perdu !</h2>
+    </ion-text>
+    <ion-text text-center color="warning">
+      <h2 *ngIf="res=='egalite'">egalité</h2>
+    </ion-text>
+    <ion-card text-center>
+      <ion-text>choix de l'ordi :</ion-text>
+    <ion-row>
+      <ion-col>
+        Gagné:<br>
+        {{gagne}}
+
+      </ion-col>
+      <ion-col>
+        Egalite: <br>
+        {{egalite}}
+
+      </ion-col>
+      <ion-col>
+        Perdu: <br>
+        {{perdu}}
+      </ion-col>
+      
+    </ion-row>
+    </ion-card>
+    <ion-row>
+      <ion-col *ngFor="let img of imgs">
+        <ion-img [src]="img" (click)="shifumi(img)"></ion-img>
+      </ion-col>
+      
+    
+    </ion-row>
+    <ion-button (click)="recomencer()" color='dark' style="margin:auto;display:block">recomencer</ion-button>
+  </div>
+
+</ion-content>
